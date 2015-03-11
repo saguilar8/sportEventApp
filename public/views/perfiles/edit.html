@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<form class="form-vertical text-left" name="editForm">
+			<h3 class="text-center">Edit perfiles</h3>
+			<fieldset ng-show="dataReceived">
+				<div class="form-group">
+					<label for="inputIdPerfil">IdPerfil</label>
+					<input id="inputIdPerfil" type="text" class="form-control" placeholder="IdPerfil" ng-model="perfiles.idPerfil" required autofocus />
+				</div>
+				<div class="form-group">
+					<label for="inputCdPerfil">CdPerfil</label>
+					<input id="inputCdPerfil" type="number" class="form-control" placeholder="CdPerfil" ng-model="perfiles.cdPerfil" required />
+				</div>
+				<div class="form-group">
+					<label for="inputDsPerfil">DsPerfil</label>
+					<input id="inputDsPerfil" type="text" class="form-control" placeholder="DsPerfil" ng-model="perfiles.dsPerfil" required />
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary" ng-click="save($event)" ng-disabled="editForm.$invalid" >Save</button>
+					<button class="btn" ng-click="cancel($event)" >Cancel</button>
+				</div>
+			</fieldset>
+			<div ng-hide="dataReceived" class="loader"><img src="images/loader.gif" alt="Loading..." /></div>
+		</form>
+
+	</div>
+	<div class="col-md-4"></div>
+</div>

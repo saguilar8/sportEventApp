@@ -1,0 +1,53 @@
+<div class="row">
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<form class="form-vertical text-left" name="editForm">
+			<h3 class="text-center">Delete usuarios</h3>
+			<fieldset ng-show="dataReceived">
+
+				<div class="form-group">
+					<label for="inputIdUsuario">IdUsuario</label>
+					<input id="inputIdUsuario" type="text" class="form-control" placeholder="IdUsuario" ng-model="usuarios.idUsuario" readonly />
+				</div>
+
+				<div class="form-group">
+					<label for="inputCdUsuario">CdUsuario</label>
+					<input id="inputCdUsuario" type="number" class="form-control" placeholder="CdUsuario" ng-model="usuarios.cdUsuario" readonly />
+				</div>
+
+				<div class="form-group">
+					<label for="inputNombre">Nombre</label>
+					<input id="inputNombre" type="text" class="form-control" placeholder="Nombre" ng-model="usuarios.nombre" readonly />
+				</div>
+
+				<div class="form-group">
+					<label for="inputApellido1">Apellido1</label>
+					<input id="inputApellido1" type="text" class="form-control" placeholder="Apellido1" ng-model="usuarios.apellido1" readonly />
+				</div>
+
+				<div class="form-group">
+					<label for="inputApellido2">Apellido2</label>
+					<input id="inputApellido2" type="text" class="form-control" placeholder="Apellido2" ng-model="usuarios.apellido2" readonly />
+				</div>
+
+				<div class="form-group">
+					<label for="inputApodo">Apodo</label>
+					<input id="inputApodo" type="text" class="form-control" placeholder="Apodo" ng-model="usuarios.apodo" readonly />
+				</div>
+
+				<div class="form-group">
+					<label for="inputCdPerfil">CdPerfil</label>
+					<input id="inputCdPerfil" type="number" class="form-control" placeholder="CdPerfil" ng-model="usuarios.cdPerfil" readonly />
+				</div>
+
+				<div class="form-group">
+					<button class="btn btn-danger" ng-click="delete($event)" ng-disabled="editForm.$invalid" >Delete</button>
+					<button class="btn" ng-click="cancel($event)" >Cancel</button>
+				</div>
+			</fieldset>
+			<div ng-hide="dataReceived" class="loader"><img src="images/loader.gif" alt="Loading..." /></div>
+		</form>
+
+	</div>
+	<div class="col-md-4"></div>
+</div>

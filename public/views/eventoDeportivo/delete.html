@@ -1,0 +1,58 @@
+<div class="row">
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<form class="form-vertical text-left" name="editForm">
+			<h3 class="text-center">Delete eventoDeportivo</h3>
+			<fieldset ng-show="dataReceived">
+
+				<div class="form-group">
+					<label for="inputIdEvDep">IdEvDep</label>
+					<input id="inputIdEvDep" type="text" class="form-control" placeholder="IdEvDep" ng-model="eventoDeportivo.idEvDep" readonly />
+				</div>
+
+				<div class="form-group">
+					<label for="inputCdEvDep">CdEvDep</label>
+					<input id="inputCdEvDep" type="number" class="form-control" placeholder="CdEvDep" ng-model="eventoDeportivo.cdEvDep" readonly />
+				</div>
+
+				<div class="form-group">
+					<label for="inputCdDeporte">CdDeporte</label>
+					<input id="inputCdDeporte" type="text" class="form-control" placeholder="CdDeporte" ng-model="eventoDeportivo.cdDeporte" readonly />
+				</div>
+
+				<div class="form-group">
+					<label for="inputLugar">Lugar</label>
+					<input id="inputLugar" type="text" class="form-control" placeholder="Lugar" ng-model="eventoDeportivo.lugar" readonly />
+				</div>
+
+				<div class="form-group">
+					<label for="inputFecha">Fecha</label>
+					<date-selector id="inputFecha" 
+					               placeholder="Fecha" 
+				                   value="eventoDeportivo.fecha"
+					               opts=" readonly" /> 
+				</div>
+
+				<div class="form-group">
+					<label for="inputHora">Hora</label>
+					<time-selector id="inputHora" 
+					               value="eventoDeportivo.hora"
+					               opts=" readonly" />
+				</div>
+
+				<div class="form-group">
+					<label for="inputUsuarios">Usuarios</label>
+					<input id="inputUsuarios" type="text" class="form-control" placeholder="Usuarios" ng-model="eventoDeportivo.usuarios" readonly />
+				</div>
+
+				<div class="form-group">
+					<button class="btn btn-danger" ng-click="delete($event)" ng-disabled="editForm.$invalid" >Delete</button>
+					<button class="btn" ng-click="cancel($event)" >Cancel</button>
+				</div>
+			</fieldset>
+			<div ng-hide="dataReceived" class="loader"><img src="images/loader.gif" alt="Loading..." /></div>
+		</form>
+
+	</div>
+	<div class="col-md-4"></div>
+</div>

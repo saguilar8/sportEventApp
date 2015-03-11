@@ -1,0 +1,45 @@
+<div class="row">
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<form class="form-vertical text-left" name="editForm">
+			<h3 class="text-center">Usuarios</h3>
+			<fieldset ng-show="dataReceived">
+				<div class="form-group">
+					<label for="valueIdUsuario">IdUsuario</label>
+					<div id="valueIdUsuario">{{usuarios.idUsuario}}</div>
+				</div>
+				<div class="form-group">
+					<label for="inputCdUsuario">CdUsuario</label>
+					<div id="valueCdUsuario">{{usuarios.cdUsuario}}</div>
+				</div>
+				<div class="form-group">
+					<label for="valueNombre">Nombre</label>
+					<div id="valueNombre">{{usuarios.nombre}}</div>
+				</div>
+				<div class="form-group">
+					<label for="valueApellido1">Apellido1</label>
+					<div id="valueApellido1">{{usuarios.apellido1}}</div>
+				</div>
+				<div class="form-group">
+					<label for="valueApellido2">Apellido2</label>
+					<div id="valueApellido2">{{usuarios.apellido2}}</div>
+				</div>
+				<div class="form-group">
+					<label for="valueApodo">Apodo</label>
+					<div id="valueApodo">{{usuarios.apodo}}</div>
+				</div>
+				<div class="form-group">
+					<label for="inputCdPerfil">CdPerfil</label>
+					<div id="valueCdPerfil">{{usuarios.cdPerfil}}</div>
+				</div>
+				<div class="form-group">
+					<button class="btn btn-primary" ng-click="gotoList($event)" >Back</button>
+					<button class="btn btn-primary" ng-click="edit($event)" >Edit</button>
+				</div>
+			</fieldset>
+			<div ng-hide="dataReceived" class="loader"><img src="images/loader.gif" alt="Loading..." /></div>
+		</form>
+
+	</div>
+	<div class="col-md-4"></div>
+</div>
