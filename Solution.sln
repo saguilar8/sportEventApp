@@ -1,0 +1,50 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Backend", "1. Backend", "{27f8bba2-7372-498e-a2f5-a046a59d834a}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{dc670e46-7be2-428c-b252-6657677cafff}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+	Release|Any CPU = Release|Any CPU
+	Release|ARM = Release|ARM
+	Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{dc670e46-7be2-428c-b252-6657677cafff}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{dc670e46-7be2-428c-b252-6657677cafff}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{dc670e46-7be2-428c-b252-6657677cafff}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{dc670e46-7be2-428c-b252-6657677cafff}.Debug|ARM.ActiveCfg = Debug|ARM
+		{dc670e46-7be2-428c-b252-6657677cafff}.Debug|ARM.Build.0 = Debug|ARM
+		{dc670e46-7be2-428c-b252-6657677cafff}.Debug|ARM.Deploy.0 = Debug|ARM
+		{dc670e46-7be2-428c-b252-6657677cafff}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{dc670e46-7be2-428c-b252-6657677cafff}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{dc670e46-7be2-428c-b252-6657677cafff}.Debug|Mixed Platforms.Deploy.0 = Debug|x86
+		{dc670e46-7be2-428c-b252-6657677cafff}.Debug|x86.ActiveCfg = Debug|x86
+		{dc670e46-7be2-428c-b252-6657677cafff}.Debug|x86.Build.0 = Debug|x86
+		{dc670e46-7be2-428c-b252-6657677cafff}.Debug|x86.Deploy.0 = Debug|x86
+		{dc670e46-7be2-428c-b252-6657677cafff}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{dc670e46-7be2-428c-b252-6657677cafff}.Release|Any CPU.Build.0 = Release|Any CPU
+		{dc670e46-7be2-428c-b252-6657677cafff}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{dc670e46-7be2-428c-b252-6657677cafff}.Release|ARM.ActiveCfg = Release|ARM
+		{dc670e46-7be2-428c-b252-6657677cafff}.Release|ARM.Build.0 = Release|ARM
+		{dc670e46-7be2-428c-b252-6657677cafff}.Release|ARM.Deploy.0 = Release|ARM
+		{dc670e46-7be2-428c-b252-6657677cafff}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{dc670e46-7be2-428c-b252-6657677cafff}.Release|Mixed Platforms.Build.0 = Release|x86
+		{dc670e46-7be2-428c-b252-6657677cafff}.Release|Mixed Platforms.Deploy.0 = Release|x86
+		{dc670e46-7be2-428c-b252-6657677cafff}.Release|x86.ActiveCfg = Release|x86
+		{dc670e46-7be2-428c-b252-6657677cafff}.Release|x86.Build.0 = Release|x86
+		{dc670e46-7be2-428c-b252-6657677cafff}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{dc670e46-7be2-428c-b252-6657677cafff} = {27f8bba2-7372-498e-a2f5-a046a59d834a}
+	EndGlobalSection
+EndGlobal
+

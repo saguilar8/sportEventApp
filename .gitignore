@@ -1,0 +1,7 @@
+/node_modules/*
+/public/bower_components/*
+/public-html/*
+/npm-debug.log
+/newrelic_agent.log
+/coverage/*
+/test_out/*
