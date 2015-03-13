@@ -3,8 +3,15 @@ angular.module('myApp').controller('LoginController', ['$scope', '$rootScope', '
 	$rootScope.isLogged = false;	
 	$rootScope.apikey = null; 
 
+	$scope.roles = [
+      {name:'Usuario', key:'USU'},
+      {name:'Administrador', key:'ADM'}
+    ];
+
 	$scope.credentials = {
-		apikey : '',
+		role : $scope.roles[0],
+		username : '',
+		userPassword : '',
 		errorMessage: null
 	};
 	
@@ -24,9 +31,23 @@ angular.module('myApp').controller('LoginController', ['$scope', '$rootScope', '
 			}, function () {
 				$rootScope.isLogged = false;		
 				$rootScope.apikey = null;
-				$scope.errorMessage = "Invalid password.";
+				$scope.errorMessage = "La clave introducida no es correcta";
 			});
 	};
+
+	function getName(cred) {
+		var key =cred.role.key;
+		if (key == 'TS') {
+			return 'Nerea Gomez';
+		}
+		else if  (key == 'PRO') {
+			return 'Luz Mondariz';
+		}
+		else if  (key == 'ADM') {
+			return 'Alicia Eneko';
+		}
+		return 'Sara Gil';
+	}
 	
 	$scope.init = function() {
 		//autologin if cookie

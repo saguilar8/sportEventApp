@@ -1,0 +1,40 @@
+<div class="row">
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<h3>Sport Event App</h3>
+		<p>Menú de la aplicación</p>
+		<p>Acceso para {{role.name}}.</p>
+		
+		<div class="row">
+			<div class="col-md-12">
+				<button class="big-icon" ng-click="gotoUsuarios()" ng-show="role.key != 'USU'">
+					<image src="/images/home-ciudadano.png" aria-hidden="true"/><br/>
+					Usuarios
+				</button>
+				<button class="big-icon" ng-click="gotoDeportes()" ng-show="role.key != 'USU'">
+					<image src="/images/home-servicios.png" aria-hidden="true"/><br/>
+					Deportes
+				</button>
+				<button class="big-icon" ng-click="gotoPerfiles()" ng-show="role.key != 'USU'">
+					<image src="/images/home-recursos.png" aria-hidden="true"/><br/>
+					Perfiles
+				</button>
+				<button class="big-icon" ng-click="gotoEventosDeportivos()">
+					<image src="/images/home-diagSocial.png" aria-hidden="true"/><br/>
+					EventosDeportivos
+				</button>
+				<button class="big-icon" ng-click="gotoAppMovil()" >
+					<image src="/images/mobileApp.png" aria-hidden="true"/><br/>
+					App Móvil
+				</button>
+				<button class="big-icon" ng-click="gotoAdmin()" ng-show="role.key == 'ADM'">
+					<image src="/images/home-admin.png" aria-hidden="true"/><br/>
+					Administración
+				</button>
+
+			</div>
+		</div>
+
+	</div>
+	<div class="col-md-4"></div>
+</div>

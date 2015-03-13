@@ -4,7 +4,10 @@
 angular.module('myApp', ['ngRoute', 'ngCookies', 'ui.bootstrap', 'textAngular'])
 	.config(['$routeProvider', function ($routeProvider) {
 		$routeProvider
-			.when('/',	                   		{ templateUrl: 'views/main.html',  controller: 'MainController' })
+
+			.when('/admin',	                   		{ templateUrl: 'views/main.html',  controller: 'MainController' })
+
+			.when('/',	                   		{ templateUrl: 'views/menu.html',  controller: 'MenuController' })
 			.when('/login',                   	{ templateUrl: 'views/login.html',  controller: 'LoginController' })
 			.when('/logout',                    { templateUrl: 'views/logout.html', controller: 'LogoutController' })
 			.when('/import/:class', 			{ templateUrl: 'views/import.html', controller: 'ImportController' })
@@ -37,6 +40,8 @@ angular.module('myApp', ['ngRoute', 'ngCookies', 'ui.bootstrap', 'textAngular'])
 			.when('/usuarios/edit/:id', 	 { templateUrl: 'views/usuarios/edit.html',   controller: 'EditUsuariosController' })
 			.when('/usuarios/delete/:id', { templateUrl: 'views/usuarios/delete.html', controller: 'DeleteUsuariosController' })
 			.when('/usuarios/:id', { templateUrl: 'views/usuarios/view.html', controller: 'ViewUsuariosController' })
+
+
 
 			.otherwise({ redirectTo: '/login' });
 	}])
