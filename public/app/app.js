@@ -26,8 +26,7 @@ angular.module('myApp', ['ngRoute', 'ngCookies', 'ui.bootstrap', 'textAngular'])
 			.when('/eventoDeportivo/edit/:id', 	 { templateUrl: 'views/eventoDeportivo/edit.html',   controller: 'EditEventoDeportivoController' })
 			.when('/eventoDeportivo/delete/:id', { templateUrl: 'views/eventoDeportivo/delete.html', controller: 'DeleteEventoDeportivoController' })
 			.when('/eventoDeportivo/:id', { templateUrl: 'views/eventoDeportivo/view.html', controller: 'ViewEventoDeportivoController' })
-			.when('/eventoDeportivo/detalle/:id', 	 { templateUrl: 'views/eventoDeportivo/detalle.html',   controller: 'DetalleEventoDeportivoController' })
-
+			
 			.when('/perfiles/',		 { templateUrl: 'views/perfiles/list.html',   controller: 'ListPerfilesController' })
 			.when('/perfiles/select',		 { templateUrl: 'views/perfiles/select.html',   controller: 'SelectPerfilesController' })
 			.when('/perfiles/add',        { templateUrl: 'views/perfiles/edit.html',   controller: 'EditPerfilesController' })
