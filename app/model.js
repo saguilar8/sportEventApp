@@ -19,7 +19,7 @@ var EventoDeportivoSchema = new mongoose.Schema({
 	lugar: { type: String, required: false },
 	fecha: { type: Date, required: false },
 	hora: { type: Date, required: false },
-	usuarios: { type: String, required: false }
+	usuarios: { type: ObjectId, required: false, ref: 'usuarios'}
 });
 
 var PerfilesSchema = new mongoose.Schema({ 
