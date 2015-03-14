@@ -18,7 +18,7 @@ angular.module('myApp').controller('DetalleEventodeportivoController', ['$scope'
 		var navItem = NavigationService.pop();
 		//$scope = navItem.state;
 		var usuario = navItem.returnData;
-		$scope.eventoDeportivo.usuario = usuario._id;
+		$scope.eventoDeportivo.usuario = usuario.idUsuario;
 		$scope.usuario = usuario;
 		
 		saveChanges();
