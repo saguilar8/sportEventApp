@@ -1148,7 +1148,16 @@ div.timepicker > table > tbody > tr > td > input.form-control {
 
 img.logo {
 	width: 2em;
+	padding-top: 0em;
+	padding-left: 0em;
+	
 }
 .texCenter {
 	text-align: center;
+}
+
+img.logoSEApp{
+	width: 5em;
+	padding-top: 0em;
+	padding-left: 0em;	
 }
