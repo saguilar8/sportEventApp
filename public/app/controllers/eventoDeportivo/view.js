@@ -1,5 +1,28 @@
 angular.module('myApp').controller('ViewEventoDeportivoController', ['$scope', '$routeParams', '$location', 'EventoDeportivoService', function($scope, $routeParams, $location, EventoDeportivoService) {
 
+	function formatFechaFromText(dtext) {
+		if (!dtext) {
+			return '-';
+		}
+		var dt = new Date(Date.parse(dtext));
+
+		var df = dt.getDate() + '/' +
+			     (dt.getMonth()+1) + '/' + 
+			     dt.getFullYear();
+		return df;			      
+	}
+
+	function formatHoraFromText(dtext) {
+		if (!dtext) {
+			return '-';
+		}
+		var dt = new Date(Date.parse(dtext));
+
+		var h = dt.getHours() + ':' +
+			     dt.getMinutes();
+		return h;			      
+	}
+
 	function init() {
 		$scope.eventoDeportivo = {
 			idEvDep : '', 
