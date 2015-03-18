@@ -4,6 +4,7 @@
 		
 		<form class="form-vertical text-left" name="editForm" ngCloak>
 			<h3 class="text-center">EventoDeportivo</h3>
+			<br/>
 			<label class="widthLabel">Código Evento Deportivo:</label>
 			<div class="inline">{{eventoDeportivo.cdEvDep}}</div>
 
@@ -13,20 +14,63 @@
 			<br/>
 			
 			<label class="widthLabel">Fecha del evento:</label>
-			<div class="inline">{{eventoDeportivo.fecha | date:'dd MMMM yyyy'}}</div><br/>
+			<div class="inline">{{eventoDeportivo.fecha | date:'dd MM yyyy'}}</div><br/>
 
 			<label class="widthLabel">Hora del evento:</label>
-			<div class="inline">{{eventoDeportivo.hora | date:'HH MM'}}</div><br/>
+			<div class="inline">{{eventoDeportivo.hora | date:'hh mm'}}</div><br/>
 
 			<label class="widthLabel">Lugar:</label>
 			<div class="inline" address-display ng-model="eventoDeportivo.lugar"></div><br/>	
+
+			<br/>
+			<br/>
+
+			<h4>Convocatoria</h4>
+			<table class="tableFont data-table table table-hover table-striped table-condensed">
+				<thead>
+					<th>Fecha inscripción</th>
+					<th>Nombre</th>
+					<th>Apellidos</th>
+					<th>Color camiseta</th>
+					<th></th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="usuario in eventoDeportivo.usuarios">
+						<td class="data col-md-2">{{Date() | date:'dd MMMM yyyy'}}</td>
+						<td class="data col-md-3">{{usuario.nombre}}</td>
+						<td class="data col-md-3">{{usuario.apellido2}} {{usuario.apellido2}}</td>
+						<td class="data col-md-3">{{Rojo}}</td>
+							
+						</td>
+						<td><a ng-click="deleteUsuario(usuario)"><span class="glyphicon glyphicon-remove error" tooltip="Eliminar"></span></a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="form-group">
+				<button ng-show="eventoDeportivo.fechaCierre == null"
+						class="btn btn-primary" 
+						ng-click="addUsuario()">Añadir jugador</button>
+				<button class="btn" 
+						ng-click="back($event)" >Volver</button>
+			</div>
+
+
+			<div ng-hide="dataReceived" class="loader"><img src="images/loader.gif" alt="Loading..." /></div>
+		</form>
+
+	</div>
+	<div class="col-md-2"></div>
+</div>
+
 
 
 
 
 
 			
-			<fieldset ng-show="dataReceived">
+			<!--<fieldset ng-show="dataReceived">
 				<div class="form-group">
 					<label for="valueIdEvDep">IdEvDep</label>
 					<div id="valueIdEvDep">{{eventoDeportivo.idEvDep}}</div>
@@ -65,4 +109,4 @@
 
 	</div>
 	<div class="col-md-2"></div>
-</div>
+</div>-->

@@ -8,6 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+var S = require('string');
+var compression = require('compression');
+var path = require('path');
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
@@ -15,7 +19,7 @@ var session = require('express-session');
 var morgan = require('morgan');
 var mongoose = require('mongoose');
 var baucis = require('baucis');
-var Swagger = require('baucis-swagger');
+var swagger = require('baucis-swagger');
 var models = require('./model');
 var auth = require('./conf/auth');
 var imp = require('./import');
@@ -47,7 +51,7 @@ csvSupport.apply(baucis);
 // Create the express app 
 var app = express();
 app.use(morgan('dev'));
-var swagger = new Swagger(baucis);
+var swagger = new swagger(baucis);
 
 // Pluralize and set resources names
 models.DeporteModel.plural('deportes');
@@ -326,6 +330,10 @@ function getHeaderOrParam(req, key){
 
 var httpRootPath = __dirname + '/../public';
 
+require('./services/eventoDeportivo').apply(models);
+require('./import').apply(app);
+
+
 app.use('/api', baucis());
 app.use('/', express.static(httpRootPath));
 
@@ -335,9 +343,13 @@ var appHost = (process.env.VCAP_APP_HOST || 'localhost');
 app.listen(appPort);
 //app.listen(appPort, appHost);
 
+Object.keys(models.models).forEach(function(key) { 
+    var resource = models.models[key];
+    console.log('\tResource ' + S(resource.name).padRight(30) +' on   /api/' + resource.plural);
+});
 swagger.finalize(app);
 
-console.log('SampleBackend Backend - Server listening on: '+ appHost + ':' + appPort );
+console.log('Sport Event App - Server listening on: '+ appHost + ':' + appPort );
 console.log('\tResource Deporte                        on   /api/deportes');
 console.log('\tResource EventoDeportivo                on   /api/eventoDeportivos');
 console.log('\tResource Perfiles                       on   /api/perfiles');
