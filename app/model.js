@@ -90,6 +90,19 @@ var ConfigSchemaInternal = new mongoose.Schema({
 //  next();
 //});
 
+function buildModelForSchema(container, entityName, pluralName, schema) {
+  var entityModel = mongoose.model(entityName, schema);
+  entityModel.plural(pluralName);
+
+  container[entityName] = {
+    'name': entityName,
+    'plural': pluralName,
+    'schema': schema, 
+    'model': entityModel
+  };
+}
+
+
 var propertiesForClass = {
 	"deporte" : ['idDeporte', 'cdDeporte', 'dsDeporte', 'numJugadores'],
 	"eventoDeportivo" : ['idEvDep', 'cdEvDep', 'cdDeporte', 'lugar', 'fecha', 'hora', 'usuarios'],
@@ -98,12 +111,7 @@ var propertiesForClass = {
 };
 
 
-//Models ----
-var DeporteModel = mongoose.model('deporte', DeporteSchema);
-var EventoDeportivoModel = mongoose.model('eventoDeportivo', EventoDeportivoSchema);
-var PerfilesModel = mongoose.model('perfiles', PerfilesSchema);
-var UsuariosModel = mongoose.model('usuarios', UsuariosSchema);
-  
+
 
 function getModelForClass(className) {
   if ('deporte'==className) {
@@ -275,11 +283,6 @@ function datenum(v, date1904) {
   return (epoch - new Date(Date.UTC(1899, 11, 30))) / (24 * 60 * 60 * 1000);
 }
 
-// Register the schema and export it
-module.exports.DeporteModel    = DeporteModel;
-module.exports.EventoDeportivoModel    = EventoDeportivoModel;
-module.exports.PerfilesModel    = PerfilesModel;
-module.exports.UsuariosModel    = UsuariosModel;
 
 module.exports.ConfigModelInternal    = ConfigModelInternal;
 
@@ -287,3 +290,19 @@ module.exports.getModelForClass = getModelForClass;
 module.exports.toCsv = toCsv;
 module.exports.toXlsx = toXlsx;
 module.exports.toXml = toXml;
+
+
+var models = {};
+
+//Models ----
+
+buildModelForSchema(models, 'deporte', 'deportes', DeporteSchema);
+buildModelForSchema(models, 'eventoDeportivo', 'eventosDeportivos', EventoDeportivoSchema);
+buildModelForSchema(models, 'perfil', 'perfiles', PerfilesSchema);
+buildModelForSchema(models, 'usuario', 'usuarios', UsuariosSchema);
+
+
+// Register the schema and export it
+module.exports.models         = models;
+module.exports.getModelForClass   = getModelForClass;
+module.exports.propertiesForClass   = propertiesForClass;

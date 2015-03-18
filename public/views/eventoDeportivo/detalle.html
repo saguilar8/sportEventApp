@@ -30,7 +30,6 @@
 
 			
 			<label class="widthLabel">Usuario:</label>
-			<div class="inline">{{eventoDeportivo.usuario.nombre}} {{eventoDeportivo.usuario.apellido1}} {{eventoDeportivo.usuario.apellido2}}</div>
 			<br/>
 
 			<button class="btn btn-primary" 
@@ -53,7 +52,7 @@
 				</thead>
 				<tbody>
 					<tr ng-repeat="usuario in eventoDeportivo.usuarios">
-						<td class="data col-md-2">{{usuario.nombre{}}</td>
+						<td class="data col-md-2">{{usuario.nombre}}</td>
 						<td class="data col-md-6">{{usuario.apellido1}}</td>
 						<td class="data col-md-4">{{usuario.apellido2}}</td>
 					

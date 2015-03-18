@@ -138,4 +138,13 @@ function transferFields(entity, headers, data) {
 }
 
 
+function apply(app) {
+
+    app.post('/api/import', function(req, res) {
+        return importData(req, res);
+    });
+
+}
+
+module.exports.apply = apply;
 module.exports.importData = importData;

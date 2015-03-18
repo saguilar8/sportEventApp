@@ -1,4 +1,4 @@
-angular.module('myApp').controller('DetalleEventodeportivoController', ['$scope', '$routeParams', '$location', 'EventoDeportivoService', 'UsuarioService', 'NavigationService', function ($scope, $routeParams, $location,EventoDeportivoService, UsuarioService, NavigationService) {
+angular.module('myApp').controller('DetalleEventoDeportivoController', ['$scope', '$routeParams', '$location', 'EventoDeportivoService', 'UsuariosService', 'NavigationService', function ($scope, $routeParams, $location,EventoDeportivoService, UsuariosService, NavigationService) {
 	$scope.eventoDeportivo = {};
 	$scope.usuario = {};
 	$scope.dataReceived = false;

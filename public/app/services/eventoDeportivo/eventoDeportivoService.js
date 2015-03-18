@@ -310,6 +310,14 @@ angular.module('myApp').service('EventoDeportivoService', ['$http', '$q', 'UrlSe
 		return $http.post(resourceUrl, JSON.stringify(item));
 	});
 
+	EventoDeportivoService.addUsuario = safeCall(function (eventoDeportivoId, usuarioId) {
+		var msg = {
+			'_id': eventoDeportivoId,
+			'usuarios': usuarioId
+		};
+		return $http.post(resourceUrl+'/add', JSON.stringify(msg));
+	});	
+
 	EventoDeportivoService.update = function (item) {
 		return $http.put(resourceUrl + '/' + item._id, JSON.stringify(item));
 	};

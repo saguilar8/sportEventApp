@@ -27,6 +27,10 @@ angular.module('myApp').controller('ListEventoDeportivoController', ['$http', '$
 		$location.path('/eventoDeportivo/delete/' + obj._id);
 	};
 
+	$scope.detalle = function (obj) {
+		$location.path('/eventoDeportivo/detalle/' + obj._id);
+	};
+
 	$scope.deleteAll = function() {
 		$scope.dataReceived = false;
 		
