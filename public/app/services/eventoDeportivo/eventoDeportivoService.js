@@ -315,7 +315,7 @@ angular.module('myApp').service('EventoDeportivoService', ['$http', '$q', 'UrlSe
 			'_id': eventoDeportivoId,
 			'usuarios': usuarioId
 		};
-		return $http.post(resourceUrl+'/add', JSON.stringify(msg));
+		return $http.post(resourceUrl+'/addUsuario', JSON.stringify(msg));
 	});	
 
 	EventoDeportivoService.update = function (item) {

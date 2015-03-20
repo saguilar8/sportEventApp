@@ -8,26 +8,16 @@ function apply(models) {
 	   
 	    var eventoDeportivoModel = eventoDeportivoController.model();
 	    var usuarioModel = models.models.usuario.controller.model();
-	    var ciudadanoModel = models.models.ciudadano.controller.model();
+	   	   
 
-	   
-
-	    ciudadanoModel.findOneAndUpdate(
-	            {'_id': req.body.ciudadanoId},
-	            { 'eventoDeportivo': req.body.eventoDeportivoId },
+	    usuarioModel.findOneAndUpdate(
+	            {'_id': req.body.usuarioId},
 	            function(err, data) {
 	                if (err) {
 	                  return handleError(err, res, done);
 	                }
 	    });
 
-
-	    var newUsuario = new usuarioModel({
-	        'eventoDeportivo':   req.body.eventoDeportivoId,
-	        'ciudadano': req.body.ciudadanoId,
-	        'parentesco':  req.body.parentesco,
-	        'fechaAlta':   Date.now()
-	    });
 
 	    newUsuario.save(function(err, usuario) {
 	        if (err) {
@@ -41,10 +31,10 @@ function apply(models) {
 	                  return;
 	                }
 	                if (eventoDeportivo) {
-	                    eventoDeportivo.usuarios.push(usuario._id);
+	                   // eventoDeportivo.usuarios.push(usuario._id);
 	                    eventoDeportivo.save();
 
-	                    console.log("  Added member:" +usuario._id);
+	                    console.log("  Added usuarios:" +usuario._id);
 
 	                    returnJson(res, {'success': 'ok'});
 	                }

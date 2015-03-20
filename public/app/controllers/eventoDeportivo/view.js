@@ -1,13 +1,13 @@
-angular.module('myApp').controller('ViewEventoDeportivoController', ['$scope', '$routeParams', '$location', 'EventoDeportivoService', 'UsuariosService', 'NavigationService', function($scope, $routeParams, $location, EventoDeportivoService, UsuariosService, NavigationService) {
+angular.module('myApp').controller('ViewEventoDeportivoController', [ '$http', '$rootScope', '$scope', '$routeParams', '$location', 'EventoDeportivoService', 'UsuariosService', 'NavigationService', function($http, $rootScope, $scope, $routeParams, $location, EventoDeportivoService, UsuariosService, NavigationService) {
 
 	$scope.eventoDeportivo ={};
 	$scope.dataReceived = false;
 
 	function errorHandlerLoad(httpError) {
-		
+		$scope.errors = UserErrorService.translateErrors(httpError, "query");
 	}
 	function errorHandler(httpError) {
-		
+		$scope.errors = UserErrorService.translateErrors(httpError, "update");
 	}
 
 	function formatFechaFromText(dtext) {

@@ -299,8 +299,8 @@ var models = {};
 
 buildModelForSchema(models, 'deporte', 'deportes', DeporteSchema);
 buildModelForSchema(models, 'eventoDeportivo', 'eventosDeportivos', EventoDeportivoSchema);
-buildModelForSchema(models, 'perfil', 'perfiles', PerfilesSchema);
-buildModelForSchema(models, 'usuario', 'usuarios', UsuariosSchema);
+buildModelForSchema(models, 'perfiles', 'perfiles', PerfilesSchema);
+buildModelForSchema(models, 'usuarios', 'usuarios', UsuariosSchema);
 
 
 // Register the schema and export it
